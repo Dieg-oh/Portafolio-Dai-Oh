@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <!-- Especifica el tipo de documento y la versión de HTML -->
+    <meta charset="UTF-8">
+    <!-- Configura el viewport para que el sitio sea responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título de la página que aparece en la pestaña del navegador -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Almendra+SC&display=swap" rel="stylesheet">
+    <title> Portafolio De Dai-oh </title>
+
+
+    <!-- STYLESHEET -->
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <!-- Sección de encabezado del sitio -->
+    <header>
+        <h1>Portafolio De Dai-oh</h1>
+        
+        <P>Acerca de Mi</P>
+    </header>
+    <!-- Barra de navegación con enlaces -->
+    <nav>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bahiana&display=swap" rel="stylesheet">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="aboutme.html">Acerca De Mi</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <!-- Contenido principal de la página -->
+    <main>
+        <section>
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Big+Shoulders+Text:wght@100..900&family=Bokor&display=swap" rel="stylesheet">
+            <h2>Diseñador</h2>
+            <p> Diseñador Digital, Me enfoco principalmente en la ilustracion 2d asi como la animacion tradicional, actualmente es estudiando mi licenciatura en Diseño digital y produccion audio visual, espero que en mi portafolio te llame la atencion y decidas hacer uso de mis servicios.</p>
+           
+  <div class="slider-container">
+        <div class="slider-content">
+            <div class="slider-item">
+                <img src="imagen1.jpg" alt="Imagen 1">
+            </div>
+            <div class="slider-item">
+                <img src="imagen2.png" alt="Imagen 2">
+            </div>
+            <div class="slider-item">
+                <img src="imagen3.png" alt="Imagen 3">
+            </div>
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function plusSlides(n) {
+            slideIndex += n;
+            showSlides();
+        }
+
+        function showSlides() {
+            const slides = document.querySelectorAll(".slider-item");
+            if (slideIndex >= slides.length) {
+                slideIndex = 0;
+            }
+            if (slideIndex < 0) {
+                slideIndex = slides.length - 1;
+            }
+            slides.forEach((slide, index) => {
+                slide.style.display = index === slideIndex ? "block" : "none";
+            });
+            setTimeout(() => {
+                slideIndex++;
+                showSlides();
+            }, 5000); // Cambia la imagen cada 2 segundos
+        }
+    </script>
+            <img src="kuma.png" alt="mi imagen de perfil" width="300" height="300">
+     
+        </section>
+      
+      
+            
+      
+    </main>
+    <!-- Pie de página del sitio -->
+    <footer>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@100..900&display=swap" rel="stylesheet">
+        <p>&copy; 2024 My first website</p>
+    </footer>
+</body>
+</html>
