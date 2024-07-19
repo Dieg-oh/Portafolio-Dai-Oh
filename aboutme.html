@@ -16,6 +16,12 @@
     <!-- STYLESHEET -->
     <link rel="stylesheet" href="styles.css">
 
+    <!-- STYLESHEET PARA SLIDER-->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <style>
+        .mySlides {display:none;}
+        </style>
+
 </head>
 <body>
     <!-- Sección de encabezado del sitio -->
@@ -45,48 +51,35 @@
             <h2>Diseñador</h2>
             <p> Diseñador Digital, Me enfoco principalmente en la ilustracion 2d asi como la animacion tradicional, actualmente es estudiando mi licenciatura en Diseño digital y produccion audio visual, espero que en mi portafolio te llame la atencion y decidas hacer uso de mis servicios.</p>
            
-   <div class="slider-container">
-        <div class="slider-content">
-            <div class="slider-item">
-                <img src="imagen1.jpg" alt="Imagen 1">
-            </div>
-            <div class="slider-item">
-                <img src="imagen2.png" alt="Imagen 2">
-            </div>
-            <div class="slider-item">
-                <img src="imagen3.png" alt="Imagen 3">
-            </div>
-        </div>
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    </div>
+   <div class="w3-content w3-display-container">
+              <img class="mySlides" src="imagen1.jpg" style="width:100%">
+              <img class="mySlides" src="imagen2.png" style="width:100%">
+              <img class="mySlides" src="imagen3.png" style="width:100%">
 
-    <script>
-        let slideIndex = 0;
-        showSlides();
+              <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+              <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+            </div>
 
-        function plusSlides(n) {
-            slideIndex += n;
-            showSlides();
-        }
+            <script>
+            var slideIndex = 1;
+            showDivs(slideIndex);
 
-        function showSlides() {
-            const slides = document.querySelectorAll(".slider-item");
-            if (slideIndex >= slides.length) {
-                slideIndex = 0;
+            function plusDivs(n) {
+              showDivs(slideIndex += n);
             }
-            if (slideIndex < 0) {
-                slideIndex = slides.length - 1;
+
+            function showDivs(n) {
+              var i;
+              var x = document.getElementsByClassName("mySlides");
+              if (n > x.length) {slideIndex = 1}
+              if (n < 1) {slideIndex = x.length}
+              for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+              }
+              x[slideIndex-1].style.display = "block";  
             }
-            slides.forEach((slide, index) => {
-                slide.style.display = index === slideIndex ? "block" : "none";
-            });
-            setTimeout(() => {
-                slideIndex++;
-                showSlides();
-            }, 8000); // Cambia la imagen cada 2 segundos
-        }
-    </script>
+            </script>
+            
             <img src="kuma.png" alt="mi imagen de perfil" width="300" height="300">
             <br>
 
